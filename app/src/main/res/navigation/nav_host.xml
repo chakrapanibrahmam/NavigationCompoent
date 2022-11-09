@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/profileDataFragment">
+
+    <fragment
+        android:id="@+id/profileDataFragment"
+        android:name="com.example.employeetestjava.ProfileDataFragment"
+        android:label="fragment_profile_data"
+        tools:layout="@layout/fragment_profile_data" >
+        <action
+            android:id="@+id/action_profileDataFragment_to_professionDetailsFragment"
+            app:destination="@id/professionDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/professionDetailsFragment"
+        android:name="com.example.employeetestjava.ProfessionDetailsFragment"
+        android:label="fragment_profession"
+        tools:layout="@layout/fragment_profession" >
+        <action
+            android:id="@+id/action_professionDetailsFragment_to_overallDetailsFragment"
+            app:destination="@id/overallDetailsFragment" />
+        <argument
+            android:name="profileArguments"
+            app:argType="com.example.employeetestjava.data.ProfileData" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/overallDetailsFragment"
+        android:name="com.example.employeetestjava.OverallDetailsFragment"
+        android:label="fragment_overall_details"
+        tools:layout="@layout/fragment_overall_details" >
+        <argument
+            android:name="professionalArgs"
+            app:argType="com.example.employeetestjava.data.ProfessionalData" />
+    </fragment>
+</navigation>
